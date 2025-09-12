@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - QA 테스트 페이지</title>
+    <link rel="icon" type="image/png" href="rsc/background.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 로그인 페이지 -->
+    <div id="login-page" class="page active">
+        <div class="login-container">
+            <h2>로그인</h2>
+            <p class="warning-notice">이 페이지는 테스트 페이지입니다.<br>실제 비밀번호를 넣지 않도록 주의하세요!</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-id">아이디</label>
+                    <input type="text" id="login-id" name="id" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">비밀번호</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                    <button type="button" id="signup-btn" class="btn btn-secondary">회원가입</button>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="back-to-main" class="btn btn-secondary">메인으로</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 회원가입 페이지 -->
+    <div id="signup-page" class="page">
+        <div class="signup-container">
+            <h2>회원가입</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="signup-id">아이디</label>
+                    <input type="text" id="signup-id" name="id" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    <p class="notice">테스트를 위한 용도이니 실제 비밀번호를 입력하지 마세요.</p>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">가입 완료</button>
+                    <button type="button" id="back-to-login" class="btn btn-secondary">로그인으로</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 회원가입 완료 페이지 -->
+    <div id="signup-complete-page" class="page">
+        <div class="complete-container">
+            <h2>회원가입 완료</h2>
+            <div class="success-message">
+                <p>✅ 회원가입이 성공적으로 완료되었습니다!</p>
+                <p>이제 서비스를 이용하실 수 있습니다.</p>
+            </div>
+            <button id="go-to-dashboard" class="btn btn-primary">메인으로 이동</button>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>
