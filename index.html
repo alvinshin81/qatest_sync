@@ -18,10 +18,52 @@
                 <h1>QA 테스트 페이지</h1>
                 <p>품질 보증을 위한 테스트 환경입니다.</p>
                 <p class="warning-notice">실제 개인정보를 넣지 않도록 주의하세요!</p>
+                
+                <!-- 카카오 로그인 테스트 섹션 -->
+                <div class="kakao-test-section">
+                    <h2>카카오 로그인 테스트</h2>
+                    <div class="form-group">
+                        <label for="phase-select">Phase 선택:</label>
+                        <select id="phase-select" class="form-select">
+                            <option value="">Phase를 선택하세요</option>
+                            <option value="Sandbox">Sandbox</option>
+                            <option value="CBT">CBT</option>
+                        </select>
+                    </div>
+                    <button id="kakao-login-test-btn" class="kakao-test-button" disabled>카카오 로그인 테스트</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 디벨로퍼스 앱 선택 팝업 -->
+    <div id="app-selection-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>디벨로퍼스 앱 선택</h3>
+                <span class="close-btn" id="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="app-list" class="app-list">
+                    <!-- 앱 목록이 여기에 동적으로 추가됩니다 -->
+                </div>
+                <button id="login-with-selected-app" class="login-button" disabled>로그인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 카카오 로그인 결과 페이지 -->
+    <div id="kakao-result-page" class="page">
+        <div class="main-container">
+            <div class="content">
+                <h1>카카오 로그인 결과</h1>
+                <div id="login-result" class="result-display">
+                    <!-- 로그인 결과가 여기에 표시됩니다 -->
+                </div>
+                <button id="retry-btn" class="retry-button">재시도</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
