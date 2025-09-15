@@ -313,8 +313,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 Kakao.cleanup();
                 Kakao.init(app.appKey);
                 
-                // 카카오 로그인 실행
+                // 현재 URL 정보 로그
+                console.log('현재 URL:', window.location.href);
+                console.log('현재 도메인:', window.location.hostname);
+                console.log('현재 포트:', window.location.port);
+                console.log('사용 중인 앱 키:', app.appKey);
+                console.log('Phase:', phase);
+                
+                // 카카오 로그인 실행 (모바일 대응)
                 Kakao.Auth.login({
+                    throughTalk: false,  // 카카오톡 앱 연동 비활성화
                     success: function (authObj) {
                         // 사용자 정보 요청
                         Kakao.API.request({
