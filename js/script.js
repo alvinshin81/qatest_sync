@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const phase = app.phase === 'CBT' ? 'CBT' : 'Sandbox';
         const scriptUrl = scriptSrc[phase];
         
-        loginResult.innerHTML = `로그인 시도 중...\n앱: ${app.app}\n앱 ID: ${app.appId}\nPhase: ${app.phase}`;
+        loginResult.innerHTML = `로그인 시도 중...\n앱: ${app.app}\nPhase: ${app.phase}`;
         showPage(kakaoResultPage);
         
         loadScript(scriptUrl).then(() => {
@@ -332,16 +332,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                 
                                 let resultText = `로그인 성공!\n\n`;
                                 resultText += `앱: ${app.app}\n`;
-                                resultText += `앱 ID: ${app.appId}\n`;
                                 resultText += `Phase: ${app.phase}\n\n`;
                                 resultText += `**회원번호: ${res.id}**\n`;
-                                
+
                                 if (res.kakao_account?.profile?.nickname) {
                                     resultText += `닉네임: ${res.kakao_account.profile.nickname}\n`;
                                 }
-                                
-                                // HTML로 변환하여 볼드 처리
-                                const htmlResult = resultText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                                // HTML로 변환하여 회원번호를 크게 만들고 볼드 처리
+                                const htmlResult = resultText.replace(/\*\*회원번호: (.*?)\*\*/g, '<span class="member-number">회원번호: $1</span>');
                                 loginResult.innerHTML = htmlResult.replace(/\n/g, '<br>');
                             },
                             fail: function (error) {

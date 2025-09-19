@@ -689,6 +689,12 @@ body::after {
     min-height: 200px;
 }
 
+.result-display .member-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
 .retry-button {
     background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
     color: white;
